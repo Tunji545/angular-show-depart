@@ -1,3 +1,78 @@
-<div>
-  <rm-department></rm-department>
-</div>
+<section>
+  <header class="px fixed">
+    <nav class="flex space-between align-center">
+      <h1 class="capitalize">my college admin</h1>
+      <ul class="flex space-between align-center">
+        <li class="flex space-between align-center d-none-mobi">
+          <a href="#"><img src="assets/email.png" alt="" /></a
+          ><a href="#"
+            ><img src="assets/arr-down.png" alt="" class="arr-down"
+          /></a>
+        </li>
+        <li class="flex space-between align-center d-none-mobi">
+          <a href="#"><img src="assets/alarm.png" alt="" /></a
+          ><a href="#"
+            ><img src="assets/arr-down.png" alt="" class="arr-down"
+          /></a>
+        </li>
+        <li class="flex space-between align-center mobi-lft">
+          <a href="#" class="flex">
+            <img src="assets/user.png" alt="" />
+            <a href="#" class="admin wh">admin</a>
+          </a>
+          <a href="#">
+            <img src="assets/arr-down.png" alt="" class="arr-down" />
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <aside class="aside d-none-lapi">
+    <ul class="pt1 flex column space-between">
+      <li id="close-icon" class="d-none close-icon">
+        <div class="close-btn">
+          <img src="assets/close.png" alt="" />
+        </div>
+      </li>
+      <li class="pl1 active">
+        <a class="active flex align-center" routerLink="/dashboard">
+          <img src="assets/dashboard.png" alt="" class="aside-img" />
+          <p class="capitalize">Dashboard</p>
+        </a>
+      </li>
+      <li class="pl1">
+        <a href="../pages/user-management.html" class="flex align-center">
+          <img src="assets/students.png" alt="" class="aside-img" />
+          <p class="capitalize">user management</p>
+        </a>
+      </li>
+      <li class="pl1">
+        <a href="../pages/students.html" class="flex align-center">
+          <img src="assets/students.png" alt="" class="aside-img" />
+          <p class="capitalize">Students</p>
+        </a>
+      </li>
+      <li class="pl1">
+        <a class="flex align-center" routerLink="/lecturers">
+          <img src="assets/classes.png" alt="" class="aside-img" />
+          <p class="capitalize">Department</p>
+        </a>
+      </li>
+      <li class="pl1">
+        <a href="../pages/scores.html" class="flex align-center"
+          ><img src="assets/setting.png" alt="" class="aside-img" />
+          <p class="capitalize">Scores</p>
+        </a>
+      </li>
+      <li class="pl1">
+        <a href="../pages/result.html" class="flex align-center"
+          ><img src="assets/result.png" alt="" class="aside-img" />
+          <p class="capitalize">Results</p>
+        </a>
+      </li>
+    </ul>
+  </aside>
+</section>
+<section>
+  <router-outlet></router-outlet>
+</section>

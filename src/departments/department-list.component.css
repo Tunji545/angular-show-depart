@@ -259,7 +259,7 @@ main .hamburger-btn {
 .students-wrapper {
   background-color: #efeeff;
   position: relative;
-  top: 5rem;
+  top: 6rem;
   z-index: 0;
 }
 .students-wrapper1 {
@@ -581,6 +581,9 @@ td {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+}
+td a {
+  color: #7180a1;
 }
 /* SMALL SCREEN LAPTOP */
 @media screen and (max-width: 1024px) {

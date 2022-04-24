@@ -1,14 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  templateUrl: './department-list.component.html',
-  styleUrls: ['./department-list.component.css'],
+  templateUrl: './department-detail.component.html',
+  styleUrls: ['./department-detail.component.css'],
 })
-export class DepartmentListComponent {
-  pageTitle: string = 'Lecturer Biodata';
+export class DepartmentDetailComponent implements OnInit {
+  pageTitle: string = 'Project Detail';
+  lecturer: any;
   lecturers: any[] = [
     {
-      lecturerId: '1',
+      lecturerId: 1,
       firstName: 'Zainab',
       lastName: 'Buhari',
       status: 'Single',
@@ -21,7 +23,7 @@ export class DepartmentListComponent {
       imageDel: 'assets/trash.png',
     },
     {
-      lecturerId: '2',
+      lecturerId: 2,
       firstName: 'Ope',
       lastName: 'Shade',
       status: 'Single',
@@ -34,7 +36,7 @@ export class DepartmentListComponent {
       imageDel: 'assets/trash.png',
     },
     {
-      lecturerId: '3',
+      lecturerId: 3,
       firstName: 'Jalallat',
       lastName: 'Elrufai',
       status: 'married',
@@ -47,7 +49,7 @@ export class DepartmentListComponent {
       imageDel: 'assets/trash.png',
     },
     {
-      lecturerId: '4',
+      lecturerId: 4,
       firstName: 'Helen',
       lastName: 'Ayok',
       status: 'Single',
@@ -60,7 +62,7 @@ export class DepartmentListComponent {
       imageDel: 'assets/trash.png',
     },
     {
-      lecturerId: '5',
+      lecturerId: 5,
       firstName: 'Joshua',
       lastName: 'Caleb',
       status: 'Single',
@@ -73,7 +75,7 @@ export class DepartmentListComponent {
       imageDel: 'assets/trash.png',
     },
     {
-      lecturerId: '6',
+      lecturerId: 6,
       firstName: 'Samson',
       lastName: 'Judith',
       status: 'married',
@@ -86,4 +88,19 @@ export class DepartmentListComponent {
       imageDel: 'assets/trash.png',
     },
   ];
+
+  constructor(private route: ActivatedRoute, private router: Router) {}
+
+  ngOnInit(): any {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.pageTitle += ` ${id}`;
+    this.lecturer = this.lecturers.find((lecturer: any): boolean => {
+      console.log(lecturer.lecturerId);
+      return lecturer.lecturerId === id;
+    });
+    return this.lecturer;
+  }
+  onBack(): void {
+    this.router.navigate(['/lecturers']);
+  }
 }

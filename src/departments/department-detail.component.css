@@ -1,0 +1,225 @@
+main {
+  width: 80%;
+  margin-left: 20%;
+  background-color: #fff;
+  min-height: calc(100vh);
+}
+.pageTitle {
+  padding-top: 6rem;
+  /* top: 6rem; */
+  background-color: #efeeff;
+}
+.pxy {
+  padding: 1rem;
+}
+button {
+  height: 4rem;
+  width: 6rem;
+  border-radius: 0.8rem;
+  border: 1px solid #777;
+  font-size: 1.2rem;
+}
+.fa-chevron-left {
+  margin-right: 0.4rem;
+}
+hr {
+  position: relative;
+}
+.main {
+  position: relative;
+  padding-left: 1rem;
+}
+.blk {
+  color: #222;
+}
+/* SMALL SCREEN LAPTOP */
+@media screen and (max-width: 1024px) {
+  body {
+    overflow-x: hidden;
+  }
+  h1 {
+    font-size: 2.4rem;
+  }
+  .d-none-lapi {
+    display: none;
+  }
+  .aside {
+    width: 20% !important;
+  }
+  main {
+    margin-left: 0;
+    width: 100%;
+  }
+  #close-icon {
+    display: block;
+  }
+  .modal-container {
+    width: 70vw;
+    /* height: 68vh; */
+  }
+  .modal-container .submit {
+    margin-top: 2rem;
+  }
+}
+
+/* TABLET VIEW */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  .aside {
+    visibility: visible;
+  }
+  main h2 {
+    font-size: 1.8rem;
+  }
+  main .hamburger-btn {
+    height: 3rem;
+  }
+  main .dash-hamb {
+    position: relative;
+    top: 0;
+  }
+  .wrap {
+    flex-wrap: wrap;
+  }
+  .aside {
+    width: 25% !important;
+  }
+  .aside li p {
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+  th,
+  td {
+    font-size: 1.3rem !important;
+  }
+  .modal-container input,
+  .modal-container label {
+    font-size: 1.2rem;
+  }
+  .modal-container {
+    width: 83vw;
+    /* height: 70vh; */
+  }
+  .modal-container input {
+    margin-bottom: 0.8rem;
+  }
+  .modal-container label {
+    margin-left: 1.6rem;
+  }
+  .modal-container .submit {
+    margin-top: 4rem;
+    font-size: 2.1rem;
+  }
+  .student-info {
+    width: 100%;
+  }
+  .grade-chart {
+    width: 50%;
+  }
+  .student-img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* MOBILE VIEW */
+@media screen and (max-width: 600px) {
+  .student-info,
+  .grade-chart {
+    width: 100%;
+  }
+  .student-img {
+    order: -1;
+    margin-bottom: 4rem;
+    width: 30%;
+  }
+  h1 {
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+  header ul {
+    width: 50%;
+  }
+  .aside {
+    width: 40% !important;
+  }
+  .aside ul {
+    padding-top: 0;
+  }
+  .aside li p {
+    font-size: 1.4rem;
+  }
+  .hamburger {
+    display: block;
+  }
+  main .dash-hamb {
+    position: relative;
+    top: 2rem;
+    margin-bottom: 2rem;
+  }
+  main .hamburger-btn {
+    height: 3rem;
+  }
+  .d-none-mobile {
+    display: none;
+  }
+  th,
+  td {
+    width: 20%;
+  }
+  .form-header {
+    font-size: 1.8rem;
+  }
+  .modal-container label {
+    margin-left: 11rem;
+  }
+  .modal-container input {
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+  }
+  .modal-container .submit {
+    font-size: 1.8rem;
+  }
+  .col2-1 {
+    width: 100%;
+  }
+}
+
+/* SMALL MOBILE VIEW */
+@media screen and (max-width: 375px) {
+  .aside {
+    width: 45% !important;
+  }
+  .d-none-mobi {
+    display: none;
+  }
+  .mobi-lft {
+    margin-left: auto;
+  }
+  .modal-container input,
+  .modal-container label {
+    font-size: 1.2rem;
+  }
+}
+
+/* EXTRA SMALL MOBILE VIEW */
+@media screen and (max-width: 320px) {
+  .aside {
+    width: 50% !important;
+  }
+  th,
+  td {
+    font-size: 1.1rem !important;
+  }
+  .d-none-ext-mobi {
+    display: none;
+  }
+  .form-header {
+    font-size: 1.4rem;
+  }
+  .modal-container .submit {
+    font-size: 1.6rem;
+  }
+}

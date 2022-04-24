@@ -1,0 +1,24 @@
+<main>
+  <div class="header">
+    <div class="pageTitle">
+      <h1 class="pxy">{{ pageTitle + " : " + lecturer.department }}</h1>
+    </div>
+  </div>
+  <hr />
+  <div class="main">
+    <h1 class="blk">
+      {{
+        lecturer.firstName +
+          " " +
+          lecturer.lastName +
+          " is a lecturer in the department of " +
+          lecturer.department
+      }}
+    </h1>
+  </div>
+  <div class="footer">
+    <div class="pageTitle pxy">
+      <button (click)="onBack()"><i class="fa fa-chevron-left"></i>BACK</button>
+    </div>
+  </div>
+</main>
