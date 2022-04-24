@@ -6,6 +6,7 @@ main {
 }
 .pageTitle {
   padding-top: 6rem;
+  padding-left: 1rem;
   /* top: 6rem; */
   background-color: #efeeff;
 }

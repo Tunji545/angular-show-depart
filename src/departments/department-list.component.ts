@@ -1,89 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { LecturersService } from './lecturers.service';
 
 @Component({
   templateUrl: './department-list.component.html',
   styleUrls: ['./department-list.component.css'],
 })
-export class DepartmentListComponent {
+export class DepartmentListComponent implements OnInit, OnDestroy {
   pageTitle: string = 'Lecturer Biodata';
-  lecturers: any[] = [
-    {
-      lecturerId: '1',
-      firstName: 'Zainab',
-      lastName: 'Buhari',
-      status: 'Single',
-      gender: 'Female',
-      faculty: 'Sciences',
-      department: 'Politics',
-      email: 'zainab@gmail.com',
-      phoneNo: '08098765432',
-      imageEdit: 'assets/editBtn.png',
-      imageDel: 'assets/trash.png',
-    },
-    {
-      lecturerId: '2',
-      firstName: 'Ope',
-      lastName: 'Shade',
-      status: 'Single',
-      gender: 'male',
-      faculty: 'Sciences',
-      department: 'Computer',
-      email: 'ope@gmail.com',
-      phoneNo: '08098765432',
-      imageEdit: 'assets/editBtn.png',
-      imageDel: 'assets/trash.png',
-    },
-    {
-      lecturerId: '3',
-      firstName: 'Jalallat',
-      lastName: 'Elrufai',
-      status: 'married',
-      gender: 'Female',
-      faculty: 'Sciences',
-      department: 'Politics',
-      email: 'jalallat@gmail.com',
-      phoneNo: '08098765432',
-      imageEdit: 'assets/editBtn.png',
-      imageDel: 'assets/trash.png',
-    },
-    {
-      lecturerId: '4',
-      firstName: 'Helen',
-      lastName: 'Ayok',
-      status: 'Single',
-      gender: 'Female',
-      faculty: 'fashion',
-      department: 'modelling',
-      email: 'helen@gmail.com',
-      phoneNo: '08098765432',
-      imageEdit: 'assets/editBtn.png',
-      imageDel: 'assets/trash.png',
-    },
-    {
-      lecturerId: '5',
-      firstName: 'Joshua',
-      lastName: 'Caleb',
-      status: 'Single',
-      gender: 'male',
-      faculty: 'Religion',
-      department: 'CRK',
-      email: 'joshua@gmail.com',
-      phoneNo: '08098765432',
-      imageEdit: 'assets/editBtn.png',
-      imageDel: 'assets/trash.png',
-    },
-    {
-      lecturerId: '6',
-      firstName: 'Samson',
-      lastName: 'Judith',
-      status: 'married',
-      gender: 'male',
-      faculty: 'Science',
-      department: 'Social',
-      email: 'samson@gmail.com',
-      phoneNo: '08098765432',
-      imageEdit: 'assets/editBtn.png',
-      imageDel: 'assets/trash.png',
-    },
-  ];
+  lecturers: any[] = [];
+  errorMessage: string = '';
+  sub!: Subscription;
+  constructor(private lecturersService: LecturersService) {}
+  ngOnInit(): void {
+    this.sub = this.lecturersService.getLecturers().subscribe({
+      next: (lecturers) => {
+        console.log(this.lecturers);
+        this.lecturers = lecturers;
+      },
+      error: (err) => (this.errorMessage = err),
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
+  }
 }
