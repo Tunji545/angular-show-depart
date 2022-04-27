@@ -27,17 +27,27 @@
             </a>
           </li>
         </ul>
-        <button class="modal-btn flex center">
-          <div class="btn-modal mr">
-            <img src="assets/plus.png" alt="" />
-          </div>
-        </button>
+        <div class="flex space-between">
+          <input type="text" class="filterText" [(ngModel)]="searchText" />
+          <button class="modal-btn flex center ml">
+            <div class="btn-modal mr">
+              <img src="assets/plus.png" alt="" />
+            </div>
+          </button>
+        </div>
       </div>
     </div>
 
     <!-- Students Score Records -->
     <div class="student-records pb1">
-      <p class="students-table pl2 uppercase">Lecturers Data</p>
+      <div class="flex space-between align-center">
+        <p class="students-table pl2 uppercase">
+          Lecturers Data : {{ searchText }}
+        </p>
+        <button class="showImage" (click)="toggleImage()">
+          {{ showImage ? "Hide" : "Show" }} image
+        </button>
+      </div>
       <table class="table table1 blk2" *ngIf="lecturers.length">
         <thead>
           <tr class="flex space-between wrap">
@@ -56,12 +66,12 @@
           <tr
             id="${student.id}"
             class="flex space-between wrap"
-            *ngFor="let lecturer of lecturers"
+            *ngFor="let lecturer of filteredLecturers"
           >
             <td class="d-none-mobile">{{ lecturer.firstName }}</td>
             <td>{{ lecturer.lastName }}</td>
-            <td>{{ lecturer.status }}</td>
-            <td>{{ lecturer.gender }}</td>
+            <td>{{ lecturer.status | lowercase }}</td>
+            <td>{{ lecturer.gender | lowercase }}</td>
             <td class="d-none-mobile">{{ lecturer.faculty }}</td>
             <td>
               <a [routerLink]="['/lecturers', lecturer.lecturerId]">
@@ -70,12 +80,15 @@
             </td>
             <td class="d-none-mobile ecclipsis">{{ lecturer.email }}</td>
             <td class="d-none-mobile">{{ lecturer.phoneNo }}</td>
-            <td class="flex">
+            <td
+              class="flex"
+              [style.visibility]="showImage ? 'visible' : 'hidden'"
+            >
               <button type="button" class="edit-btn">
-                <img src="{{ lecturer.imageEdit }}" class="edit" />
+                <img [src]="lecturer.imageEdit" class="edit" />
               </button>
               <button type="button" class="delete-btn">
-                <img src="{{ lecturer.imageDel }}" class="delete" />
+                <img [src]="lecturer.imageDel" class="delete" />
               </button>
             </td>
           </tr>

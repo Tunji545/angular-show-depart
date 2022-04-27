@@ -7,9 +7,9 @@ main {
 .pageTitle {
   padding-top: 6rem;
   padding-left: 1rem;
-  /* top: 6rem; */
   background-color: #efeeff;
 }
+
 .padding {
   padding: 1rem;
 }
@@ -56,7 +56,6 @@ hr {
   }
   .modal-container {
     width: 70vw;
-    /* height: 68vh; */
   }
   .modal-container .submit {
     margin-top: 2rem;

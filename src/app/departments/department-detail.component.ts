@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ILecturer } from './lecturers';
 
 @Component({
   templateUrl: './department-detail.component.html',
@@ -7,8 +8,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class DepartmentDetailComponent implements OnInit {
   pageTitle: string = 'Project Detail';
-  lecturer: any;
-  lecturers: any[] = [
+  lecturer: ILecturer | undefined;
+  lecturers: ILecturer[] = [
     {
       lecturerId: 1,
       firstName: 'Zainab',
@@ -94,7 +95,7 @@ export class DepartmentDetailComponent implements OnInit {
   ngOnInit(): any {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.pageTitle += ` ${id}`;
-    this.lecturer = this.lecturers.find((lecturer: any): boolean => {
+    this.lecturer = this.lecturers.find((lecturer: ILecturer): boolean => {
       console.log(lecturer.lecturerId);
       return lecturer.lecturerId === id;
     });

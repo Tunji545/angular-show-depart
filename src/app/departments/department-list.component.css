@@ -111,6 +111,15 @@ img {
 .width4 {
   width: 8.333333333333333%;
 }
+.showImage {
+  border: 1px solid #ccc;
+  padding: 0.4rem;
+  border-radius: 0.8rem;
+  margin-right: 1.6rem;
+  margin-top: 0.4rem;
+  background-color: #fff;
+  color: #444;
+}
 header {
   background-image: linear-gradient(to right, #082e7e, #04925e);
   color: #fff;
@@ -122,6 +131,14 @@ header:hover {
 }
 nav {
   height: 6rem;
+}
+.filterText {
+  border: none;
+  outline: none;
+  padding: 0.2rem;
+  border-radius: 0.8rem;
+  padding-left: 0.8rem;
+  font-size: 1.2rem;
 }
 .px {
   padding-left: 2%;
@@ -584,6 +601,9 @@ td {
 }
 td a {
   color: #7180a1;
+}
+.ml {
+  margin-left: 1.6rem;
 }
 /* SMALL SCREEN LAPTOP */
 @media screen and (max-width: 1024px) {

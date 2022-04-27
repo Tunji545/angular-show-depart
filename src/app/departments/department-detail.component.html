@@ -1,18 +1,18 @@
 <main>
   <div class="header">
     <div class="pageTitle">
-      <h1 class="pxy">{{ pageTitle + " : " + lecturer.department }}</h1>
+      <h1 class="pxy">{{ pageTitle + " : " + lecturer?.department }}</h1>
     </div>
   </div>
   <hr />
   <div class="main">
     <h1 class="blk">
       {{
-        lecturer.firstName +
+        lecturer?.firstName +
           " " +
-          lecturer.lastName +
+          lecturer?.lastName +
           " is a lecturer in the department of " +
-          lecturer.department
+          lecturer?.department
       }}
     </h1>
   </div>

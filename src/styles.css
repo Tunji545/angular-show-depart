@@ -11,3 +11,27 @@ html {
   padding: 0;
   box-sizing: border-box;
 }
+.flex {
+  display: flex;
+}
+.inline-flex {
+  display: inline-flex;
+  gap: 1rem;
+  align-items: center;
+}
+.column {
+  flex-direction: column;
+}
+.row {
+  flex-direction: row;
+}
+.space-between {
+  justify-content: space-between;
+}
+.align-center {
+  align-items: center;
+}
+.center {
+  justify-content: center;
+  align-items: center;
+}
